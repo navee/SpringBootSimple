@@ -6,4 +6,6 @@ import org.springframework.data.domain.Pageable;
 
 public interface UserService {
 	public Page<User> findAll(Pageable pageable);
+
+	public User findById(Long id);
 }
