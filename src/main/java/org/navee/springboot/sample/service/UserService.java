@@ -8,4 +8,8 @@ public interface UserService {
 	public Page<User> findAll(Pageable pageable);
 
 	public User findById(Long id);
+	
+	public void save(User user);
+
+	public void deleteById(Long id);
 }

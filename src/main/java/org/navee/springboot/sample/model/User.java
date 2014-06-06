@@ -7,9 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="t_user")
@@ -24,6 +25,7 @@ public class User implements Serializable {
 	private Long id;
 
 	@Column(nullable = false)
+	@NotEmpty(message="用户名不能为空")//hibernate validate 暂时还不生效
 	private String name;
 	
 	@ManyToOne

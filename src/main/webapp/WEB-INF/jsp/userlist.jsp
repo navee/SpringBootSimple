@@ -17,14 +17,22 @@
 <body>
 <jsp:include page="layout/header.jsp"></jsp:include>
 <div class="container">
+	<div class="btn-toolbar" style="padding-bottom:15px;">
+		<a href="/user/add" class="btn btn-default" role="button">新增</a>
+	</div>
 	<table class="table">
 		<tr>
 			<td>ID</td>
 			<td>NAME</td>
 			<td>DEPARTMENT</td>
+			<td></td>
 		</tr>
 		<c:forEach items="${users.content }" var="user">
-			<tr><td>${user.id }</td><td><a href="/user/${user.id }">${user.name }</a></td><td>${user.department.name }</td>
+			<tr>
+				<td>${user.id }</td>
+				<td><a href="/user/${user.id }">${user.name }</a></td>
+				<td>${user.department.name }</td>
+				<td><a href="/user/update/${user.id }">修改</a> / <a href="/user/delete/${user.id }">删除</a></td>
 		</c:forEach>
 	</table>
 	<ul class="pagination">
